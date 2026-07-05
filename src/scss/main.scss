@@ -102,12 +102,24 @@ body {
   line-height: calc(19 / 16 * 1rem);
 }
 
+.white {
+  color: $white;
+}
+
+.grey-400 {
+  color: $grey-400;
+}
+
 .grey-500 {
   color: $grey-500;
 }
 
 .green-900 {
   color: $green-900;
+}
+
+.green-400 {
+  color: $green-400;
 }
 
 main {
@@ -188,6 +200,33 @@ main {
         h2 {
           margin-bottom: $size-100;
         }
+      }
+    }
+
+    .total {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: $size-300;
+      background-color: $green-900;
+      border-radius: 15px;
+      padding: 30px 23px;
+
+      .tip-amount-container, .total-amount-container {
+        text-align: left;
+      }
+
+      .tip-amount-value-container, .total-amount-value-container {
+        justify-self: end;
+      }
+
+      #reset-button {
+        grid-column: span 2;
+        background-color: $green-400;
+        color: $green-900;
+        border: none;
+        border-radius: 5px;
+        font-family: inherit;
+        height: $size-600;
       }
     }
   }
