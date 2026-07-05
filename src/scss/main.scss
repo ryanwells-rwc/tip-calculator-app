@@ -101,3 +101,94 @@ body {
   font-size: $size-162;
   line-height: calc(19 / 16 * 1rem);
 }
+
+.grey-500 {
+  color: $grey-500;
+}
+
+.green-900 {
+  color: $green-900;
+}
+
+main {
+  text-align: center;
+
+  .logo {
+    margin-top: calc(50 / 16 * 1rem);
+    margin-bottom: calc(41 / 16 * 1rem);
+  }
+
+  article {
+    background-color: $white;
+    border-radius: 25px 25px 0 0;
+    padding: $size-400;
+
+    .bill {
+      text-align: left;
+
+      h1 {
+        margin-bottom: $size-100;
+      }
+
+      #form {
+        .input-container {
+          display: flex;
+          align-items: center;
+          background-color: $grey-50;
+          border: none;
+          margin-bottom: $size-400;
+          padding: 6px 19px;
+          border-radius: 5px;
+          width: 100%;
+
+          .icon-left {
+            margin-right: 10px;
+          }
+
+          .value-right {
+            border: none;
+            background: transparent;
+            outline: none;
+            text-align: right;
+            width: 100%;
+            font-family: inherit;
+            color: $green-900;
+          }
+
+          .value-right::placeholder {
+            color: $grey-300;
+          }
+        }
+
+        .button-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: $size-200;
+          margin-bottom: $size-400;
+
+          .tip-button {
+            background-color: $green-900;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            color: $white;
+          }
+
+          .default {
+            background-color: $green-400;
+            color: $green-900;
+          }
+
+          .tip-button-custom {
+            background-color: $grey-50;
+            color: $grey-550;
+          }
+        }
+
+        h2 {
+          margin-bottom: $size-100;
+        }
+      }
+    }
+  }
+}
