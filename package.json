@@ -1,0 +1,17 @@
+{
+  "name": "tip-calculator-app-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Tip calculator app coding challenge](./preview.jpg)",
+  "license": "ISC",
+  "author": "Ryan Wells",
+  "type": "commonjs",
+  "main": "public/assets/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:build": "sass src/scss/main.scss public/assets/css/main.css",
+    "sass:watch": "sass --watch src/scss/main.scss public/assets/css/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}

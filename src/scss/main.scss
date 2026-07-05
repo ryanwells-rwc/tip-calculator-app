@@ -1,0 +1,103 @@
+/* space-mono-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/space-mono-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+$size-50: calc(4 / 16 * 1rem);
+$size-100: calc(8 / 16 * 1rem);
+$size-125: calc(10 / 16 * 1rem);
+$size-150: calc(12 / 16 * 1rem);
+$size-162: calc(13 / 16 * 1rem);
+$size-175: calc(14 / 16 * 1rem);
+$size-187: calc(15 / 16 * 1rem);
+$size-200: calc(16 / 16 * 1rem);
+$size-225: calc(18 / 16 * 1rem);
+$size-250: calc(20 / 16 * 1rem);
+$size-300: calc(24 / 16 * 1rem);
+$size-350: calc(28 / 16 * 1rem);
+$size-375: calc(30 / 16 * 1rem);
+$size-400: calc(32 / 16 * 1rem);
+$size-450: calc(36 / 16 * 1rem);
+$size-500: calc(40 / 16 * 1rem);
+$size-550: calc(44 / 16 * 1rem);
+$size-600: calc(48 / 16 * 1rem);
+$size-700: calc(56 / 16 * 1rem);
+$size-750: calc(60 / 16 * 1rem);
+$size-800: calc(64 / 16 * 1rem);
+$size-900: calc(72 / 16 * 1rem);
+$size-1000: calc(80 / 16 * 1rem);
+$size-1100: calc(88 / 16 * 1rem);
+$size-1200: calc(96 / 16 * 1rem);
+$size-1300: calc(104 / 16 * 1rem);
+$size-1400: calc(112 / 16 * 1rem);
+$size-1500: calc(120 / 16 * 1rem);
+$size-1600: calc(128 / 16 * 1rem);
+$size-1800: calc(144 / 16 * 1rem);
+$size-2000: calc(160 / 16 * 1rem);
+
+$white: #fff;
+$black: #000;
+$grey-600: #3d6666;
+$grey-550: #547878;
+$grey-500: #5e7a7d;
+$grey-400: #7f9d9f;
+$grey-300: #9ebbbd;
+$grey-200: #c5e4e7;
+$grey-50: #f3f9fa;
+$green-900: #00474b;
+$green-800: #085c61;
+$green-750: #0d686d;
+$green-400: #26c2ae;
+$green-200: #9fe8df;
+$orange: #e17052;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: $grey-200;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.text-preset-1 {
+  font-size: $size-600;
+  line-height: calc(71 / 16 * 1rem);
+  letter-spacing: -1px;
+}
+
+.text-preset-2 {
+  font-size: $size-400;
+  line-height: calc(47 / 16 * 1rem);
+  letter-spacing: -0.67px;
+}
+
+.text-preset-3 {
+  font-size: $size-300;
+  line-height: $size-450;
+}
+
+.text-preset-4 {
+  font-size: $size-250;
+  line-height: $size-375;
+}
+
+.text-preset-5 {
+  font-size: $size-200;
+  line-height: $size-300;
+}
+
+.text-preset-6 {
+  font-size: $size-162;
+  line-height: calc(19 / 16 * 1rem);
+}
