@@ -122,6 +122,10 @@ body {
   color: $green-400;
 }
 
+.hidden {
+  display: none !important;
+}
+
 main {
   text-align: center;
 
@@ -172,6 +176,10 @@ main {
           }
         }
 
+        .input-container.border-orange {
+          border: 1px solid $orange;
+        }
+
         .button-container {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
@@ -184,6 +192,17 @@ main {
             border-radius: 5px;
             font-family: inherit;
             color: $white;
+
+            &:hover, &:focus {
+              background-color: $green-200;
+              color: $green-900;
+              cursor: pointer;
+            }
+
+            &.active {
+              background-color: $green-400;
+              color: $green-900;
+            }
           }
 
           .default {
@@ -191,14 +210,40 @@ main {
             color: $green-900;
           }
 
-          .tip-button-custom {
-            background-color: $grey-50;
-            color: $grey-550;
+          .custom-tip-container {
+            .tip-button-custom {
+              background-color: $grey-50;
+              color: $grey-550;
+              width: 100%;
+            }
+
+            #custom-input {
+              width: 100%;
+              border: 1px solid $green-400;
+              outline: $green-400;
+              border-radius: 5px;
+              background-color: $grey-50;
+              text-align: right;
+              font-family: inherit;
+              font-size: $size-300;
+              line-height: $size-450;
+              color: $green-900;
+
+              &::placeholder {
+                color: $grey-300;
+              }
+            }
           }
         }
 
-        h2 {
+        .people-container {
           margin-bottom: $size-100;
+          display: flex;
+
+          #people-error {
+            color: $orange;
+            margin-left: auto;
+          }
         }
       }
     }
@@ -219,14 +264,84 @@ main {
         justify-self: end;
       }
 
-      #reset-button {
+      button {
         grid-column: span 2;
-        background-color: $green-400;
+        background-color: $green-800;
         color: $green-900;
         border: none;
         border-radius: 5px;
         font-family: inherit;
         height: $size-600;
+
+        &.green-400-bg {
+          background-color: $green-400;
+        }
+
+        //&.green-400-bg:hover, &.green-400-bg:focus {
+         // background-color: $green-400;
+        //  cursor: pointer;
+        //}
+
+        &:not(.no-hover):hover, &:not(.no-hover):focus {
+          background-color: $green-200;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    article {
+      width: 608px;
+      border-radius: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 54px 75px;
+
+      .bill {
+        #form {
+          .button-container {
+            grid-template-columns: repeat(3, 1fr);
+
+            .tip-button {
+              height: $size-600;
+            }
+          }
+        }
+      }
+
+      .total {
+        padding: 43px 48px;
+        align-items: center;
+
+        .tip-amount-value-container, .total-amount-value-container {
+          p.text-preset-2 {
+            font-size: $size-600;
+            line-height: calc(71 / 16 * 1rem);
+            letter-spacing: -1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    article {
+      width: 920px;
+      display: flex;
+      column-gap: $size-600;
+      padding: $size-400 $size-500;
+
+      .bill {
+        width: 379px;
+      }
+
+      .total {
+        width: 413px;
       }
     }
   }
