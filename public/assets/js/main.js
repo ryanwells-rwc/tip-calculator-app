@@ -11,15 +11,18 @@ const tipPerPersonDisplay = document.getElementById('tip-per-person');
 const totalPerPersonDisplay = document.getElementById('total-per-person');
 
 function calculateTotal(tipPercent) {
+  // get bill value or 0 if not a number
   const bill = parseFloat(billInput.value) || 0;
   const peopleQuantity = peopleInput.value;
 
+  // if peopleQuantity is empty show error state and exit function
   if (peopleQuantity === '') {
     peopleError.classList.remove('hidden');
     numberOfPeopleContainer.classList.add('border-orange');
     return;
   }
 
+  // convert peopleQuantity to integer
   const people = parseInt(peopleQuantity);
 
   const totalTip = bill * (tipPercent / 100);
@@ -28,21 +31,25 @@ function calculateTotal(tipPercent) {
   document.getElementById('tip-per-person').textContent = `$${(totalTip / people).toFixed(2)}`;
   document.getElementById('total-per-person').textContent = `$${(totalBillWithTip / people).toFixed(2)}`;
 
+  // make the reset button appear active
   resetButton.classList.add('green-400-bg');
 }
 
+// prevent negative numbers from being entered in the bill input
 billInput.addEventListener('keydown', (e) => {
   if (e.key === '-') {
     e.preventDefault();
   }
 });
 
+// prevent negative numbers from being entered in the custom input
 customInput.addEventListener('keydown', (e) => {
   if (e.key === '-') {
     e.preventDefault();
   }
 });
 
+// when custom button is clicked, show the custom input and focus on it
 customBtn.addEventListener('click', (e) => {
   e.preventDefault();
   customBtn.classList.add('hidden');
@@ -51,9 +58,11 @@ customBtn.addEventListener('click', (e) => {
   calculateTotal(0);
 })
 
+// calculate total bill with tip
 customInput.addEventListener('input', () => {
   let tipPercent = parseFloat(customInput.value) || 0;
 
+  // prevent negative numbers from being entered in the custom input
   if (tipPercent < 0) {
     tipPercent = 0;
     customInput.value = 0;
@@ -62,18 +71,27 @@ customInput.addEventListener('input', () => {
   calculateTotal(tipPercent);
 })
 
+// add event listener to each tip button
 tipButtons.forEach(button => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
+
+    // hide custom input and show custom button
     customInput.value = '';
     customInput.classList.add('hidden');
     customBtn.classList.remove('hidden');
+
+    // get the value of the particular tip button that was clicked
     const tipPercent = parseFloat(button.dataset.percent);
     calculateTotal(tipPercent);
 
+    // make other buttons inactive
     tipButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
+
+    // make reset button appear clickable
     resetButton.classList.remove('no-hover');
+    resetButton.classList.add('active');
   })
 })
 
@@ -89,6 +107,7 @@ peopleInput.addEventListener('input', () => {
   }
 })
 
+// prevent negative and decimal values in people input
 peopleInput.addEventListener('keydown', (e) => {
   if (e.key === '-' || e.key === '.') {
     e.preventDefault();
@@ -96,6 +115,9 @@ peopleInput.addEventListener('keydown', (e) => {
 })
 
 resetButton.addEventListener('click', () => {
+  // if reset button is not active, return
+  if (!resetButton.classList.contains('active')) return;
+
   customInput.value = '';
   customInput.classList.add('hidden');
   customBtn.classList.remove('hidden');
@@ -104,7 +126,6 @@ resetButton.addEventListener('click', () => {
   peopleInput.value = '';
   peopleError.classList.add('hidden');
   numberOfPeopleContainer.classList.remove('border-orange');
-  //calculateTotal(0);
   tipPerPersonDisplay.textContent = '$0.00';
   totalPerPersonDisplay.textContent = '$0.00';
   resetButton.classList.remove('green-400-bg');

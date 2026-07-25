@@ -277,11 +277,6 @@ main {
           background-color: $green-400;
         }
 
-        //&.green-400-bg:hover, &.green-400-bg:focus {
-         // background-color: $green-400;
-        //  cursor: pointer;
-        //}
-
         &:not(.no-hover):hover, &:not(.no-hover):focus {
           background-color: $green-200;
           cursor: pointer;
