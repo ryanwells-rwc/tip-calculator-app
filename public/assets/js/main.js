@@ -12,13 +12,21 @@ const totalPerPersonDisplay = document.getElementById('total-per-person');
 
 function calculateTotal(tipPercent) {
   // get bill value or 0 if not a number
-  const bill = parseFloat(billInput.value) || 0;
-  const peopleQuantity = peopleInput.value;
+  let bill = parseFloat(billInput.value) || 0;
+  let peopleQuantity = peopleInput.value;
 
   // if peopleQuantity is empty show error state and exit function
   if (peopleQuantity === '') {
     peopleError.classList.remove('hidden');
     numberOfPeopleContainer.classList.add('border-orange');
+    return;
+  }
+
+  if (peopleQuantity < 0) {
+    return;
+  }
+
+  if (bill < 0) {
     return;
   }
 
@@ -96,7 +104,7 @@ tipButtons.forEach(button => {
 })
 
 peopleInput.addEventListener('input', () => {
-  const people = parseInt(peopleInput.value);
+  let people = parseInt(peopleInput.value);
 
   if (people === 0) {
     peopleError.classList.remove('hidden');
