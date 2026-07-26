@@ -19,6 +19,7 @@ function calculateTotal(tipPercent) {
   if (peopleQuantity === '') {
     peopleError.classList.remove('hidden');
     numberOfPeopleContainer.classList.add('border-orange');
+    peopleInput.setAttribute('aria-invalid', 'true');
     return;
   }
 
@@ -41,6 +42,12 @@ function calculateTotal(tipPercent) {
 
   // make the reset button appear active
   resetButton.classList.add('green-400-bg');
+
+  // set aria-invalid attribute to false
+  peopleInput.setAttribute('aria-invalid', 'false');
+
+  // enable reset button
+  resetButton.removeAttribute('disabled');
 }
 
 // prevent negative numbers from being entered in the bill input
@@ -109,9 +116,11 @@ peopleInput.addEventListener('input', () => {
   if (people === 0) {
     peopleError.classList.remove('hidden');
     numberOfPeopleContainer.classList.add('border-orange');
+    peopleInput.setAttribute('aria-invalid', 'true');
   } else {
     peopleError.classList.add('hidden');
     numberOfPeopleContainer.classList.remove('border-orange');
+    peopleInput.setAttribute('aria-invalid', 'false');
   }
 })
 

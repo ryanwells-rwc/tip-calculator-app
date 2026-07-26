@@ -32,7 +32,7 @@
 			<form id="form">
 				<div class="input-container">
 					<img class="icon-left" src="assets/images/icon-dollar.svg" alt="" aria-hidden="true">
-					<input class="value-right text-preset-3 green-900" type="number" id="bill" placeholder="0" min="0">
+					<input class="value-right text-preset-3 green-900" type="number" id="bill" placeholder="0" min="0" required>
 				</div>
 				<h2 class="text-preset-5 grey-500">Select Tip %</h2>
 				<div class="button-container">
@@ -53,7 +53,7 @@
 				<div id="number-of-people-container" class="input-container">
 					<img class="icon-left" src="assets/images/icon-person.svg" alt="" aria-hidden="true">
 					<input class="value-right text-preset-3 green-900" type="number" id="people" placeholder="0" min="0"
-					       aria-describedby="people-error">
+					       aria-describedby="people-error" required>
 				</div>
 			</form>
 		</div>
@@ -78,7 +78,7 @@
 					$0.00
 				</p>
 			</div>
-			<button id="reset-button" type="button" class="text-preset-4 no-hover">RESET</button>
+			<button id="reset-button" type="button" class="text-preset-4 no-hover" disabled>RESET</button>
 		</div>
 	</article>
 </main>
