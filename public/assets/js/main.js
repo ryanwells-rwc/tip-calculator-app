@@ -23,16 +23,16 @@ function calculateTotal(tipPercent) {
     return;
   }
 
-  if (peopleQuantity < 0) {
+  // convert peopleQuantity to integer
+  const people = parseInt(peopleQuantity);
+
+  if (people <= 0) {
     return;
   }
 
   if (bill < 0) {
     return;
   }
-
-  // convert peopleQuantity to integer
-  const people = parseInt(peopleQuantity);
 
   const totalTip = bill * (tipPercent / 100);
   const totalBillWithTip = bill + totalTip;
