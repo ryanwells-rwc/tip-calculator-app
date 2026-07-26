@@ -36,13 +36,13 @@
 				</div>
 				<h2 class="text-preset-5 grey-500">Select Tip %</h2>
 				<div class="button-container">
-					<button class="tip-button text-preset-3" data-percent="5" type="submit">5%</button>
-					<button class="tip-button text-preset-3" data-percent="10" type="submit">10%</button>
-					<button class="tip-button text-preset-3" data-percent="15" type="submit">15%</button>
-					<button class="tip-button text-preset-3" data-percent="25" type="submit">25%</button>
-					<button class="tip-button text-preset-3" data-percent="50" type="submit">50%</button>
+					<button class="tip-button text-preset-3" data-percent="5" type="button">5%</button>
+					<button class="tip-button text-preset-3" data-percent="10" type="button">10%</button>
+					<button class="tip-button text-preset-3" data-percent="15" type="button">15%</button>
+					<button class="tip-button text-preset-3" data-percent="25" type="button">25%</button>
+					<button class="tip-button text-preset-3" data-percent="50" type="button">50%</button>
 					<div class="custom-tip-container">
-						<button class="tip-button text-preset-3 tip-button-custom" type="submit" id="custom-btn">Custom</button>
+						<button class="tip-button text-preset-3 tip-button-custom" type="button" id="custom-btn">Custom</button>
 						<input type="number" id="custom-input" placeholder="0" min="0" class="hidden">
 					</div>
 				</div>
@@ -52,7 +52,8 @@
 				</div>
 				<div id="number-of-people-container" class="input-container">
 					<img class="icon-left" src="assets/images/icon-person.svg" alt="an icon of a person">
-					<input class="value-right text-preset-3 green-900" type="number" id="people" placeholder="0" min="0">
+					<input class="value-right text-preset-3 green-900" type="number" id="people" placeholder="0" min="0"
+					       aria-describedby="people-error">
 				</div>
 			</form>
 		</div>
