@@ -37,8 +37,8 @@ function calculateTotal(tipPercent) {
   const totalTip = bill * (tipPercent / 100);
   const totalBillWithTip = bill + totalTip;
 
-  document.getElementById('tip-per-person').textContent = `$${(totalTip / people).toFixed(2)}`;
-  document.getElementById('total-per-person').textContent = `$${(totalBillWithTip / people).toFixed(2)}`;
+  tipPerPersonDisplay.textContent = `$${(totalTip / people).toFixed(2)}`;
+  totalPerPersonDisplay.textContent = `$${(totalBillWithTip / people).toFixed(2)}`;
 
   // make the reset button appear active
   resetButton.classList.add('green-400-bg');
