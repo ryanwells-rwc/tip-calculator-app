@@ -27,6 +27,7 @@ npm-debug.log*
 /.next
 /out
 *.css
+*.css.map
 
 # IDEs and editors
 /.junie
